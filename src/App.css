@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --clr-app: #f2f2f2;
+  --clr-link: rgb(201, 99, 15);
+}
+/* Navbar */
+
+
+.navbar {
+  padding: 2rem;
+  background-color: var(--clr-app);
+}
+
+.navbar .menu{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu {
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.menu-link:hover {
+  color: var(--clr-link);
+}

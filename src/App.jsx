@@ -1,12 +1,11 @@
 import './App.css'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <>
       <div>
-        WEB-SITES
+        <Navbar />
       </div>
-    </>
   )
 }
 
