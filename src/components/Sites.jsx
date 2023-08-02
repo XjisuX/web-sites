@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import { useSites } from '../hooks/useSites';
 import '../App.css';
 
 const Sites = () => {
-  const { sites, loading, error } = useSites();
-
+  const navigate = useNavigate();
+  const { sites, loading, error } = useSites({ type: "list" });
+  const showItem = id => {
+    navigate(`/detail-site/${id}`);
+  };
   return (
     <>
       {error && <div> Error buscando el listado de sitios </div>}
@@ -20,13 +24,14 @@ const Sites = () => {
                 <th>Ruta pública</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='tbodyPointer'>
               {sites &&
                 sites.map(
                   ({ _id, name, description, path, publicPath }, index) => (
                     <tr
                       className={index % 2 === 0 ? 'bgColorOdd' : 'bgColorEven'}
                       key={_id}
+                      onClick={() => showItem(_id)}
                     >
                       <td>{name}</td>
                       <td>{description}</td>
