@@ -37,3 +37,42 @@
 .menu-link:hover {
   color: var(--clr-link);
 }
+
+/* Sites */
+
+div h1 {
+  font-weight: bold;
+  margin: 3rem;
+  text-align: center;
+}
+
+tbody {
+  cursor: pointer;
+}
+
+th {
+  padding: 0.8rem;
+}
+
+.table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+thead {
+  background: black;
+  color: aliceblue;
+}
+
+td {
+  padding: 0.4rem;
+  text-align: center;
+}
+
+.bgColorOdd {
+  background-color: rgb(185, 192, 192);
+}
+
+.bgColorEven {
+  background-color: rgb(142, 155, 155);
+}
