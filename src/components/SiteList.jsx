@@ -6,11 +6,11 @@ const SiteList = () => {
   const navigate = useNavigate();
   const { sites, loading, error } = useSites({ type: "list" });
   const showItem = id => {
-    navigate(`/detail-site/${id}`);
+    navigate(`/site/detail/${id}`);
   };
   return (
     <>
-      {error && <div> Error buscando el listado de sitios </div>}
+      {error && <h3> Error buscando el listado de sitios </h3>}
       {loading && <div className='spinner'></div>}
       {sites && sites.length > 0 && (
         <div>

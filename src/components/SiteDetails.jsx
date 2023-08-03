@@ -43,15 +43,15 @@ const SiteDetails = () => {
                 <td>{sites?.publicPath}</td>
                 <td>
                   <div>
+                    <Link to={`/site/update`} state={sites}>
+                      <button className='buttomEdit'>Editar</button>
+                    </Link>
                     <button
                       className='buttomDelete'
                       onClick={() => handleDeleteSite({ idSite: sites._id })}
                     >
                       Eliminar
                     </button>
-                    <Link to={`/update-site`} state={sites}>
-                      <button className='buttomEdit'>Editar</button>
-                    </Link>
                   </div>
                 </td>
               </tr>

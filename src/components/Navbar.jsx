@@ -11,7 +11,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className='menu-link' to='/new-site'>
+            <Link className='menu-link' to='/site/new'>
               Crear Sitio
             </Link>
           </li>
