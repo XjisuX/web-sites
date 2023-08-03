@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --clr-app: #f2f2f2;
+  --clr-link: rgb(201, 99, 15);
+}
+
+/* Navbar */
+
+.navbar {
+  padding: 2rem;
+  background-color: var(--clr-app);
+}
+
+.navbar .menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu {
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.menu-link:hover {
+  color: var(--clr-link);
+}
+
+/* List */
+
+div h1 {
+  font-weight: bold;
+  margin: 2rem;
+  text-align: center;
+}
+
+.tbodyPointer {
+  cursor: pointer;
+}
+
+th {
+  padding: 0.8rem;
+}
+
+.table {
+  width: 90%;
+  margin: 40px auto;
+}
+
+thead {
+  background: black;
+  color: aliceblue;
+}
+
+td {
+  padding: 0.4rem;
+  text-align: center;
+}
+
+.bgColorOdd {
+  background-color: rgb(185, 192, 192);
+}
+
+.bgColorEven {
+  background-color: rgb(142, 155, 155);
+}
+
+/* Details */
+
+div h2 {
+  margin: 3rem;
+  text-align: center;
+}
+
+.tableSite {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttomDelete {
+  background: rgb(141, 41, 41);
+  border: 1px solid #9b471d;
+  border-radius: 6px;
+  color: rgb(247, 247, 247);
+  font-size: 13px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.buttomEdit {
+  margin-right: 2.6rem;
+  background: rgb(10, 88, 10);
+  border: 1px solid rgb(10, 88, 10);
+  border-radius: 6px;
+  color: rgb(247, 247, 247);
+  font-size: 13px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.backButtom {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.backButtom button {
+  background: #0e1570;
+  border: 1px solid #0e1570;
+  border-radius: 6px;
+  color: rgb(247, 247, 247);
+  font-size: 13px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Form  */
+
+span {
+  color: red;
+  margin: 8px 5px;
+}
+
+form {
+  width: 500px;
+  padding: 16px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: #ccc;
+  margin-top: 1.5rem;
+}
+
+form h2 {
+  text-align: center;
+  margin: 0;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin: 8px 5px;
+}
+
+form input[type='text'] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #f6f6f6;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  margin: 8px 0;
+  display: block;
+}
+
+form button {
+  padding: 8px 16px;
+  margin: auto;
+  margin-top: 1.5rem;
+  border: 1px solid #000;
+  border-radius: 8px;
+  display: block;
+  color: #fff;
+  background-color: #000;
+}
+
+form button:hover {
+  cursor: pointer;
+}
+
+/* loading */
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error  */
+
+h3 {
+  text-align: center;
+  color: red;
+  margin-top: 1rem;
+}
