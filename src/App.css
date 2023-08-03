@@ -9,6 +9,7 @@
   --clr-app: #f2f2f2;
   --clr-link: rgb(201, 99, 15);
 }
+
 /* Navbar */
 
 .navbar {
@@ -37,11 +38,11 @@
   color: var(--clr-link);
 }
 
-/* Sites */
+/* List */
 
 div h1 {
   font-weight: bold;
-  margin: 3rem;
+  margin: 2rem;
   text-align: center;
 }
 
@@ -55,7 +56,7 @@ th {
 
 .table {
   width: 90%;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 thead {
@@ -89,7 +90,6 @@ div h2 {
 }
 
 .buttomDelete {
-  margin-right: 2.6rem;
   background: rgb(141, 41, 41);
   border: 1px solid #9b471d;
   border-radius: 6px;
@@ -100,6 +100,7 @@ div h2 {
 }
 
 .buttomEdit {
+  margin-right: 2.6rem;
   background: rgb(10, 88, 10);
   border: 1px solid rgb(10, 88, 10);
   border-radius: 6px;
@@ -199,4 +200,12 @@ form button:hover {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Error  */
+
+h3 {
+  text-align: center;
+  color: red;
+  margin-top: 1rem;
 }
