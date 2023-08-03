@@ -1,26 +1,20 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useSites } from '../hooks/useSites';
 import '../App.css';
 
-const SiteEdition = () => {
+const SiteNew = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const values = location.state;
-
-  const { loading, error, updateSite } = useSites({ type: '' });
+  const { loading, error, newSite } = useSites({ type: '' });
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
 
-  const onSubmit = async data => {
-    const result = await updateSite({
-      ...data,
-      idSite: values._id
-    });
-    if (result.status === 200) {
+  const onSubmit = async (data) => {
+    const result = await newSite({ ...data, key: data.name })
+    if (result.status === 200){
       navigate('/');
     }
   };
@@ -31,11 +25,10 @@ const SiteEdition = () => {
       {loading && <div className='spinner'></div>}
       {!loading && (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h2> Sitio {values?.name}</h2>
+          <h2> Crear Sitio </h2>
           <label htmlFor='key'>Llave</label>
           <input
             type='text'
-            defaultValue={values?.key}
             {...register('key', {
               required: {
                 value: true,
@@ -51,7 +44,6 @@ const SiteEdition = () => {
           <label htmlFor='name'>Nombre</label>
           <input
             type='text'
-            defaultValue={values?.name}
             {...register('name', {
               required: {
                 value: true,
@@ -59,7 +51,7 @@ const SiteEdition = () => {
               },
               maxLength: {
                 value: 100,
-                message: 'El nombre no debe tener más de 100 caracteres'
+                message: 'El nombre no debe tener más de 10 caracteres'
               }
             })}
           />
@@ -67,15 +59,10 @@ const SiteEdition = () => {
           <label htmlFor='description'>Descripción</label>
           <input
             type='text'
-            defaultValue={values?.description}
             {...register('description', {
               required: {
                 value: true,
                 message: 'Este campo es obligatorio'
-              },
-              maxLength: {
-                value: 200,
-                message: 'La descripción no debe tener más de 200 caracteres'
               }
             })}
           />
@@ -83,15 +70,10 @@ const SiteEdition = () => {
           <label htmlFor='path'>Ruta</label>
           <input
             type='text'
-            defaultValue={values?.path}
             {...register('path', {
               required: {
                 value: true,
                 message: 'Este campo es obligatorio'
-              },
-              maxLength: {
-                value: 100,
-                message: 'La ruta no debe tener más de 100 caracteres'
               }
             })}
           />
@@ -99,24 +81,19 @@ const SiteEdition = () => {
           <label htmlFor='publicPath'>Ruta pública</label>
           <input
             type='text'
-            defaultValue={values?.publicPath}
             {...register('publicPath', {
               required: {
                 value: true,
                 message: 'Este campo es obligatorio'
-              },
-              maxLength: {
-                value: 100,
-                message: 'La ruta pública no debe tener más de 100 caracteres'
               }
             })}
           />
           {errors.publicPath && <span>{errors.publicPath.message}</span>}
-          <button>Actualizar</button>
+          <button>Enviar</button>
         </form>
       )}
     </>
   );
 };
 
-export default SiteEdition
+export default SiteNew
