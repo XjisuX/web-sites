@@ -17,6 +17,19 @@ export const getSite = async ({ idSite }) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error('Error searching sites');
+    throw new Error('Error searching site');
   }
 };
+
+export const putSite = async ({ idSite, name, description, path, publicPath, key }) => {
+  try {
+    const response = await fetch(BASE_SITE_ENDPOINT+idSite, {
+      method: 'PUT',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify({ name, description, path, publicPath, key })
+    });
+    return response;
+  } catch (error) {
+    throw new Error('Error updating site');
+  }
+}

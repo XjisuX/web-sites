@@ -18,6 +18,7 @@ const Sites = () => {
           <table className='table'>
             <thead>
               <tr>
+                <th>Llave</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Ruta</th>
@@ -27,12 +28,13 @@ const Sites = () => {
             <tbody className='tbodyPointer'>
               {sites &&
                 sites.map(
-                  ({ _id, name, description, path, publicPath }, index) => (
+                  ({ _id, key, name, description, path, publicPath }, index) => (
                     <tr
                       className={index % 2 === 0 ? 'bgColorOdd' : 'bgColorEven'}
                       key={_id}
                       onClick={() => showItem(_id)}
                     >
+                      <td>{key}</td>
                       <td>{name}</td>
                       <td>{description}</td>
                       <td>{path}</td>

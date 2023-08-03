@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchSites, getSite } from '../services/siteService';
+import { fetchSites, getSite, putSite } from '../services/siteService';
 
 export const useSites = ({ type, idSite }) => {
   const [sites, setSites] = useState(null);
@@ -24,10 +24,23 @@ export const useSites = ({ type, idSite }) => {
       .finally(() => setLoading(false));
   };
 
+  const updateSite = async ({ idSite, name, description, path, publicPath, key }) => {
+    setLoading(true)
+    setError(null);
+    try {
+      const response = await putSite({ idSite, name, description, path, publicPath, key })
+      return response;
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   useEffect(() => {
     if (type === 'list') listSites();
     else if (type === 'search') searchSite({ idSite });
   }, []);
 
-  return { sites, loading, error };
+  return { sites, loading, error, updateSite };
 };

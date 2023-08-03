@@ -26,6 +26,7 @@ const SiteDetails = () => {
           <table className='tableSite'>
             <thead className='title'>
               <tr>
+                <th>Llave</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Ruta</th>
@@ -35,6 +36,7 @@ const SiteDetails = () => {
             </thead>
             <tbody>
               <tr className='bgColorEven' key={sites?._id}>
+                <td>{sites?.key}</td>
                 <td>{sites?.name}</td>
                 <td>{sites?.description}</td>
                 <td>{sites?.path}</td>
