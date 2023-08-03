@@ -30,7 +30,11 @@ export const useSites = ({ type, idSite }) => {
     try {
       const response = await putSite({ idSite, name, description, path, publicPath, key })
       if (response.status === 400) {
-        setError("Error: El Nombre y la Ruta ya existen");
+        if (idSite && name && description && path && publicPath && key){
+          setError("Error: la combinación nombre y ruta ya existen");
+        }else{
+          setError("Error: hay campos vacíos");
+        }
         setTimeout(() => {
           setError(null);
         }, 5000);
@@ -61,7 +65,11 @@ export const useSites = ({ type, idSite }) => {
     try {
       const response = await postSite({ name, description, path, publicPath, key });
       if (response.status === 400) {
-        setError("Error: El Nombre y la Ruta ya existen");
+        if (idSite && name && description && path && publicPath && key){
+          setError("Error: la combinación nombre y ruta ya existen");
+        }else{
+          setError("Error: hay campos vacíos");
+        }
         setTimeout(() => {
           setError(null);
         }, 5000);
