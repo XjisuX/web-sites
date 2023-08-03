@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSites } from '../hooks/useSites';
 import '../App.css';
 
-const Sites = () => {
+const SiteList = () => {
   const navigate = useNavigate();
   const { sites, loading, error } = useSites({ type: "list" });
   const showItem = id => {
@@ -50,4 +50,4 @@ const Sites = () => {
   );
 };
 
-export default Sites;
+export default SiteList;
