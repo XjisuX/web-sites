@@ -33,3 +33,14 @@ export const putSite = async ({ idSite, name, description, path, publicPath, key
     throw new Error('Error updating site');
   }
 }
+
+export const deleteSite = async ({ idSite }) => {
+  try {
+    const response = await fetch(BASE_SITE_ENDPOINT+idSite, {
+      method: 'DELETE',
+    });
+    return response;
+  } catch (error) {
+    throw new Error('Error deleting site');
+  }
+}

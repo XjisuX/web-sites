@@ -5,13 +5,13 @@ const SiteDetails = () => {
   const navigate = useNavigate();
   const { idSite } = useParams();
 
-  const { sites, loading, deleteSiteId } = useSites({
+  const { sites, loading, removeSite } = useSites({
     type: 'search',
     idSite
   });
 
   const handleDeleteSite = async ({ idSite }) => {
-    const result = await deleteSiteId({ idSite });
+    const result = await removeSite({ idSite });
     if (result.status === 200) {
       navigate('/');
     }

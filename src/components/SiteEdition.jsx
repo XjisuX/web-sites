@@ -43,7 +43,7 @@ const SiteEdition = () => {
               },
               maxLength: {
                 value: 50,
-                message: 'El nombre no debe tener más de 10 caracteres'
+                message: 'La llave no debe tener más de 50 caracteres'
               }
             })}
           />

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchSites, getSite, putSite } from '../services/siteService';
+import { deleteSite, fetchSites, getSite, putSite } from '../services/siteService';
 
 export const useSites = ({ type, idSite }) => {
   const [sites, setSites] = useState(null);
@@ -37,10 +37,23 @@ export const useSites = ({ type, idSite }) => {
     }
   }
 
+  const removeSite = async ({ idSite }) => {
+    setLoading(true)
+    setError(null);
+    try {
+      const response = await deleteSite({ idSite })
+      return response;
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   useEffect(() => {
     if (type === 'list') listSites();
     else if (type === 'search') searchSite({ idSite });
-  }, []);
+  }, [idSite, type]);
 
-  return { sites, loading, error, updateSite };
+  return { sites, loading, error, updateSite, removeSite };
 };
